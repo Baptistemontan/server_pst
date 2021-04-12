@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "6074d06087550453fb17cf6d"
+  },
+  "driverId": 2,
+  "__v": 0,
+  "driverName": "Rafael Coss",
+  "lastPos": {
+    "_id": {
+      "$oid": "6074d0c4d87d3d4ed033825c"
+    },
+    "lat": 37.19533058280065,
+    "lng": -89.560546875
+  },
+  "truckId": 5
+},{
+  "_id": {
+    "$oid": "6074d06087550453fb17cf70"
+  },
+  "driverId": 4,
+  "__v": 0,
+  "driverName": "Ana Castro",
+  "lastPos": {
+    "_id": {
+      "$oid": "6074d0c4d87d3d4ed033824e"
+    },
+    "lat": 39.027718840211605,
+    "lng": -93.9990234375
+  },
+  "truckId": 34
+},{
+  "_id": {
+    "$oid": "6074d06087550453fb17cf72"
+  },
+  "driverId": 1,
+  "__v": 0,
+  "driverName": "Edgar Orendain",
+  "lastPos": {
+    "_id": {
+      "$oid": "6074d12cd87d3d4ed033825f"
+    },
+    "lat": 39.36827914916011,
+    "lng": -94.361572265625
+  },
+  "truckId": 27
+},{
+  "_id": {
+    "$oid": "6074d06087550453fb17cf7a"
+  },
+  "driverId": 3,
+  "__v": 0,
+  "driverName": "James Medel",
+  "lastPos": {
+    "_id": {
+      "$oid": "6074d0c4d87d3d4ed0338259"
+    },
+    "lat": 36.36822190085111,
+    "lng": -95.504150390625
+  },
+  "truckId": 49
+},{
+  "_id": {
+    "$oid": "6074d06087550453fb17cf7c"
+  },
+  "driverId": 8,
+  "__v": 0,
+  "driverName": "Robert Molina",
+  "lastPos": {
+    "_id": {
+      "$oid": "6074d0c4d87d3d4ed033824f"
+    },
+    "lat": 38.66835610151509,
+    "lng": -94.383544921875
+  },
+  "truckId": 50
+},{
+  "_id": {
+    "$oid": "6074d06087550453fb17cf80"
+  },
+  "driverId": 6,
+  "__v": 0,
+  "driverName": "Robert Hryniewicz",
+  "lastPos": {
+    "_id": {
+      "$oid": "6074d0c4d87d3d4ed0338250"
+    },
+    "lat": 42.22851735620852,
+    "lng": -91.77978515625
+  },
+  "truckId": 33
+},{
+  "_id": {
+    "$oid": "6074d06087550453fb17cf82"
+  },
+  "driverId": 5,
+  "__v": 0,
+  "driverName": "George De Leon",
+  "lastPos": {
+    "_id": {
+      "$oid": "6074d0c4d87d3d4ed033825b"
+    },
+    "lat": 39.842286020743394,
+    "lng": -89.62646484375
+  },
+  "truckId": 30
+},{
+  "_id": {
+    "$oid": "6074d06087550453fb17cf84"
+  },
+  "driverId": 7,
+  "__v": 0,
+  "driverName": "Mushtaq Rizvi",
+  "lastPos": {
+    "_id": {
+      "$oid": "6074d0c4d87d3d4ed033825a"
+    },
+    "lat": 34.77771580360469,
+    "lng": -92.30712890625
+  },
+  "truckId": 28
+}]
