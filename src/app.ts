@@ -5,33 +5,30 @@ import getRoute from "./routes/get"
 import { DriverModel } from "./models/driver/model";
 import { DriverEventModel } from "./models/driverevent/model";
 import * as db from "./database"
+import { spawn } from "child_process";
+
 
 const app = express();
 const port = 8888;
+const pyScriptPath = "./src/test.py"
 
 // database connection
 db.connect();
 
+const pyProcess = spawn("python", [pyScriptPath])
 
-
-
-// readline
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
-
-rl.on("line", line => {
+pyProcess.stdout.on("data", data => {
+    const line = data.toString()
     const [currentDriver, driverEvent] = parseEventLine(line);
     DriverModel.updateOne({ driverId: currentDriver.driverId }, currentDriver, { upsert:true }, err => err && console.log(err))
     DriverEventModel.create(driverEvent)
 })
 
 
-// on CTRL + C
-rl.on("SIGINT", () => {
-    process.exit(0);
-})
+// // on CTRL + C
+// rl.on("SIGINT", () => {
+//     process.exit(0);
+// })
 
 
 
