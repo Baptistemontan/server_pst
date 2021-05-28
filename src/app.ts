@@ -20,20 +20,26 @@ const pyProcess = spawn("python", [pyScriptPath])
 pyProcess.stdout.on("data", data => {
     const line = data.toString()
     const [currentDriver, driverEvent] = parseEventLine(line);
-    DriverModel.updateOne({ driverId: currentDriver.driverId }, currentDriver, { upsert:true }, err => err && console.log(err))
+    DriverModel.updateOne({ driverId: currentDriver.driverId }, currentDriver, { upsert:true }, err => err && console.error(err))
     DriverEventModel.create(driverEvent)
 })
 
+pyProcess.stderr.on("data", data => {
+    console.error(data.toString())
+})
 
-// // on CTRL + C
-// rl.on("SIGINT", () => {
-//     process.exit(0);
-// })
+pyProcess.on('close', () => {
+    console.log('pyprocess close');
+});
+
+pyProcess.on('exit', () => {
+    console.log('pyprocess exit');
+});
 
 
-
-
-
+pyProcess.on('disconnect', () => {
+    console.log('pyprocess disconnect');
+})
 
 // routes
 app.use(express.json());

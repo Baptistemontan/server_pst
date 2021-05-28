@@ -27,12 +27,14 @@ router.get("/events/:driverId", (req, res) => {
     DriverEventModel.find({driverId: Number(req.params.driverId)},{_id:0, __v:0, pos:{_id:0}}).then(value => {
         res.send(JSON.stringify(value));
     }, err => {
+        console.error(err)
         res.send(err)
     });
 })
 
 router.get("/drivers", (req, res) => {
     DriverModel.find({}, (err, doc) => {
+        if(err) console.error(err)
         res.send(err || JSON.stringify(doc.map(DriverDocToDriverObj)));
     })
 })
