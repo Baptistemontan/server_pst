@@ -38,7 +38,7 @@ export function DriverDocToDriverObj(driverDoc:IDriverDocument) {
         truckId: driverDoc.truckId,
         driverId: driverDoc.driverId,
         driverName: driverDoc.driverName,
-        lastPos: driverDoc.lastPos
+        lastPos: DriverPosDocToDriverPosObj(driverDoc.lastPos)
     }
     return driver;
 }
@@ -57,7 +57,7 @@ export function DriverEventDocToDriverEventObj(driverEventDoc:IDriverEventDocume
         eventTime: driverEventDoc.eventTime.getTime(),
         routeId: driverEventDoc.routeId,
         routeName: driverEventDoc.routeName,
-        pos: driverEventDoc.pos,
+        pos: DriverPosDocToDriverPosObj(driverEventDoc.pos),
         speed: driverEventDoc.speed,
         eventType: driverEventDoc.eventType,
         foggy: driverEventDoc.foggy,
