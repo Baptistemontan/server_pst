@@ -24,8 +24,9 @@ const router = Router();
 router.use(cors(CorsOptions))
 
 router.get("/events/:driverId", (req, res) => {
-    DriverEventModel.find({driverId: Number(req.params.driverId)},{_id:0, __v:0, pos:{_id:0}}).then(value => {
-        res.send(JSON.stringify(value));
+    DriverEventModel.find({driverId: Number(req.params.driverId)}).then(value => {
+        const val = value.map(DriverEventDocToDriverEventObj)
+        res.send(JSON.stringify(val));
     }, err => {
         console.error(err)
         res.send(err)
