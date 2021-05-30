@@ -10,36 +10,37 @@ import { spawn } from "child_process";
 
 const app = express();
 const port = 8888;
-const pyScriptPath = "./src/test.py"
+const pyScriptPath = ""
 
 // database connection
 db.connect();
 
-const pyProcess = spawn("python", [pyScriptPath])
+if(pyScriptPath.length){
+    const pyProcess = spawn("python", [pyScriptPath])
 
-pyProcess.stdout.on("data", data => {
-    const line = data.toString()
-    const [currentDriver, driverEvent] = parseEventLine(line);
-    DriverModel.updateOne({ driverId: currentDriver.driverId }, currentDriver, { upsert:true }, err => err && console.error(err))
-    DriverEventModel.create(driverEvent)
-})
+    pyProcess.stdout.on("data", data => {
+        const line = data.toString()
+        const [currentDriver, driverEvent] = parseEventLine(line);
+        DriverModel.updateOne({ driverId: currentDriver.driverId }, currentDriver, { upsert:true }, err => err && console.error(err))
+        DriverEventModel.create(driverEvent)
+    })
 
-pyProcess.stderr.on("data", data => {
-    console.error(data.toString())
-})
+    pyProcess.stderr.on("data", data => {
+        console.error(data.toString())
+    })
 
-pyProcess.on('close', () => {
-    console.log('pyprocess close');
-});
+    pyProcess.on('close', () => {
+        console.log('pyprocess close');
+    });
 
-pyProcess.on('exit', () => {
-    console.log('pyprocess exit');
-});
+    pyProcess.on('exit', () => {
+        console.log('pyprocess exit');
+    });
 
-
-pyProcess.on('disconnect', () => {
-    console.log('pyprocess disconnect');
-})
+    pyProcess.on('disconnect', () => {
+        console.log('pyprocess disconnect');
+    })
+}
 
 // routes
 app.use(express.json());
