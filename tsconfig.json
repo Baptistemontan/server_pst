@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "removeComments": true,
       "skipLibCheck": true,
       "module": "commonjs",
       "esModuleInterop": true,
