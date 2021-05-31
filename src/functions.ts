@@ -1,7 +1,7 @@
 import { IDriverEvent, IDriverEventDocument } from "./models/driverevent/types"
 import { IDriver, IDriverDocument } from "./models/driver/types"
 import { IDriverPositionDocument, IDriverPosition } from "./models/driverposition/types"
-import { ExportEvent } from "./exportTypes"
+import { ExportEvent } from "./exportTypes";
 
 export function parseEventLine(line:string):[IDriver, IDriverEvent] {
     // then separate all values of the line
