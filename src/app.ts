@@ -3,7 +3,7 @@ import getRoute from "./routes/get"
 import * as db from "./database"
 
 const app = express();
-const port = 8888;
+const port = process.env.PORT || 8888;
 
 // database connection
 // db.connect();
