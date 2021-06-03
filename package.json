@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc -b",
     "postinstall": "npm run tsc",
-    "start": "node .\\dist\\app.js"
+    "start": "node ./dist/app.js"
   },
   "keywords": [],
   "author": "",
