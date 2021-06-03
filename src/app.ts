@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 8888;
 
 // database connection
-// db.connect();
+db.connect();
 
 
 // routes
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 // on process exit
 process.on('exit', code => {
     // database disconnection
-    // db.disconnect();
+    db.disconnect();
     console.log("exit with code " + code);
 });
 
