@@ -4,9 +4,10 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "tsc": "tsc -b",
+    "compile": "tsc -b",
+    "prestart": "npm run compile",
     "start": "node ./dist/app.js",
-    "postinstall": "npm run tsc",
+    "postinstall": "npm run compile",
     "publish": "git push heroku master",
     "logs": "heroku logs --tail"
   },
