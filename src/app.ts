@@ -17,6 +17,10 @@ app.listen(port, () => {
     console.log(`server is listening on ${port}`);
 });
 
+app.get("/", (req, res) => {
+    res.send("yep thats me");
+})
+
 
 // on process exit
 process.on('exit', code => {

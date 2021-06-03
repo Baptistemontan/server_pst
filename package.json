@@ -16,6 +16,9 @@
     "@types/mongoose": "^5.10.4",
     "typescript": "^3.3.3"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "child_process": "^1.0.2",
     "cors": "^2.8.5",
