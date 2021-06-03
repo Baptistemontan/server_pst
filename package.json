@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "compile": "tsc -b",
-    "prestart": "npm run compile",
+    "watch-ts": "tsc -w",
     "start": "node ./dist/app.js",
     "postinstall": "npm run compile",
     "publish": "git push heroku master",
