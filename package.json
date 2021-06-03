@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "prestart": "tsc -b",
+    "tsc": "tsc -b",
+    "postinstall": "npm run tsc",
     "start": "node .\\dist\\app.js"
   },
   "keywords": [],
