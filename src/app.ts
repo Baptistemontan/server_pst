@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 
 // on process exit
-process.on('exit', code => {
+process.on('SIGINT', code => {
     // database disconnection
     db.disconnect();
     console.log("exit with code " + code);
