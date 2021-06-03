@@ -9,7 +9,8 @@
     "start": "node ./dist/app.js",
     "postinstall": "npm run compile",
     "deploy": "git push heroku master",
-    "logs": "heroku logs --tail"
+    "logs": "heroku logs --tail",
+    "restart": "heroku restart"
   },
   "keywords": [],
   "author": "",
