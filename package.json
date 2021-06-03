@@ -6,7 +6,9 @@
   "scripts": {
     "tsc": "tsc -b",
     "start": "node ./dist/app.js",
-    "postinstall": "npm run tsc"
+    "postinstall": "npm run tsc",
+    "publish": "git push heroku master",
+    "logs": "heroku logs --tail"
   },
   "keywords": [],
   "author": "",
