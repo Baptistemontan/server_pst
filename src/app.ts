@@ -28,6 +28,3 @@ process.on('SIGINT', code => {
     db.disconnect();
     console.log("exit with code " + code);
 });
-
-// rX0eCzG9vS5aFKbf
-// admin : H2auqWthJJRSKbF4
