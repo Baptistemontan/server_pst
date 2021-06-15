@@ -1,6 +1,5 @@
 import { IDriverEvent, IDriverEventDocument } from "./models/driverevent/types"
-import { IDriver, IDriverDocument } from "./models/driver/types"
-import { IDriverPositionDocument, IDriverPosition } from "./models/driverposition/types"
+import { IDriver } from "./models/driver/types"
 interface ExportEvent extends Omit<IDriverEvent, "eventTime"> {
     eventTime: number
 }
