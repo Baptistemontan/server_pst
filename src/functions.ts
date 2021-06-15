@@ -6,7 +6,7 @@ interface ExportEvent extends Omit<IDriverEvent, "eventTime"> {
 }
 
 export function parseEventLine(line:string):[IDriver, IDriverEvent] {
-    // then separate all values of the line
+    // separate all values of the line
     const parsedLine = line.split('|');
     // get the driver ID
     const currentDriver:IDriver = {
@@ -35,37 +35,10 @@ export function parseEventLine(line:string):[IDriver, IDriverEvent] {
 	return [currentDriver, event];
 }
 
-export function DriverDocToDriverObj(driverDoc:IDriverDocument) {
-    const driver:IDriver = {
-        truckId: driverDoc.truckId,
-        driverId: driverDoc.driverId,
-        driverName: driverDoc.driverName,
-        lastPos: DriverPosDocToDriverPosObj(driverDoc.lastPos)
-    }
-    return driver;
-}
-
-export function DriverPosDocToDriverPosObj(driverPosDoc:IDriverPositionDocument|IDriverPosition) {
-    const position:IDriverPosition = {
-        lat: driverPosDoc.lat,
-        lng: driverPosDoc.lng
-    }
-    return position;
-}
-
 export function DriverEventDocToDriverEventObj(driverEventDoc:IDriverEventDocument) {
     const position:ExportEvent = {
-        driverId: driverEventDoc.driverId,
+        ...driverEventDoc,
         eventTime: driverEventDoc.eventTime.getTime(),
-        routeId: driverEventDoc.routeId,
-        routeName: driverEventDoc.routeName,
-        pos: DriverPosDocToDriverPosObj(driverEventDoc.pos),
-        speed: driverEventDoc.speed,
-        eventType: driverEventDoc.eventType,
-        foggy: driverEventDoc.foggy,
-        rainy: driverEventDoc.rainy,
-        windy: driverEventDoc.windy,
-        congestionLevel: driverEventDoc.congestionLevel,
-    }
+    };
     return position;
 }

@@ -1,7 +1,7 @@
 import { Router } from "express"
 import { DriverModel } from "../models/driver/model";
 import { DriverEventModel } from "../models/driverevent/model"
-import { DriverDocToDriverObj, DriverEventDocToDriverEventObj, DriverPosDocToDriverPosObj } from "../functions"
+import { DriverEventDocToDriverEventObj } from "../functions"
 import cors from "cors"
 
 const router = Router();
@@ -21,7 +21,7 @@ router.get("/events/:driverId", (req, res) => {
 router.get("/drivers", (req, res) => {
     DriverModel.find({}, (err, doc) => {
         if(err) console.error(err)
-        res.send(err || JSON.stringify(doc.map(DriverDocToDriverObj)));
+        res.send(err || JSON.stringify(doc));
     })
 })
 
